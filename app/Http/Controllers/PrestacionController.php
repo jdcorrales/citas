@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Prestacion;
 use Illuminate\Http\Request;
+
+//Models
+use App\Models\Prestacion;
 
 class PrestacionController extends Controller
 {
@@ -12,9 +14,11 @@ class PrestacionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $prestacion = Prestacion::with(['sede'])->get();        
+
+        return response()->json($prestacion);
     }
 
     /**

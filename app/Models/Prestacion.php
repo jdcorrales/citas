@@ -15,4 +15,9 @@ class Prestacion extends Model
     {
     	return $this->hasMany(Disponibilidad::class);
     }
+
+    public function sede()
+    {
+    	return $this->belongsTo(Sede::class);
+    }
 }

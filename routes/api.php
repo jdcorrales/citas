@@ -26,5 +26,9 @@ Route::group(['prefix' => 'v1'], function () {
         Route::prefix('sede')->group(function () {
             Route::get('/', 'SedeController@index');
         });
+
+        Route::prefix('prestacion')->group(function () {
+            Route::get('/', 'PrestacionController@index');
+        });
     });
 });
