@@ -22,7 +22,7 @@ $factory->define(Disponibilidad::class, function (Faker $faker) {
 
         	while($hora_inicial->lte($hora_final) && $i < $turnos) {
         		$hora_inicial = $hora_inicial->addMinutes(30);
-        		$date[] = $hora_inicial->format('Y-m:d H:i:s');
+        		$date[] = $hora_inicial->format('Y-m-d H:i:s');
         		$i++;
         	}
 
