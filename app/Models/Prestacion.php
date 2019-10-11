@@ -10,4 +10,9 @@ class Prestacion extends Model
     use SoftDeletes;
 
     protected $table = "prestaciones";
+
+    public function disponibilidad()
+    {
+    	return $this->hasMany(Disponibilidad::class);
+    }
 }

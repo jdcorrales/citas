@@ -15,8 +15,8 @@ class SedeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $sedes = Sede::all();
+    {        
+        $sedes = Sede::with(['prestacion.disponibilidad'])->get();        
 
         return response()->json($sedes);
     }
