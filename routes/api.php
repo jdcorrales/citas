@@ -16,11 +16,15 @@ use Illuminate\Http\Request;
 Route::group(['prefix' => 'v1'], function () {
     Route::post('login', 'AuthApi\AuthController@login');
 
-    Route::group(['middleware' => ['auth.jwt']], function () {
+    Route::group(['middleware' => ['jwt.auth']], function () {
         Route::prefix('login')->group(function () {
             Route::post('/refresh', 'AuthApi\AuthController@refresh');
             Route::post('logout', 'AuthApi\AuthController@logout');
             Route::post('/me', 'AuthApi\AuthController@me');
+        });
+
+        Route::prefix('sede')->group(function () {
+            Route::get('/', 'SedeController@index');
         });
     });
 });
