@@ -16,19 +16,9 @@ class PrestacionController extends Controller
      */
     public function index(Request $request)
     {
-        $prestacion = Prestacion::with(['sede'])->get();        
+        $prestacion = Prestacion::with(['sede'])->get();
 
         return response()->json($prestacion);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
     }
 
     /**
@@ -38,28 +28,6 @@ class PrestacionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Prestacion  $prestacion
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Prestacion $prestacion)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Prestacion  $prestacion
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Prestacion $prestacion)
     {
         //
     }

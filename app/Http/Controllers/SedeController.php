@@ -15,20 +15,10 @@ class SedeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {        
-        $sedes = Sede::with(['prestacion.disponibilidad'])->get();        
+    {
+        $sedes = Sede::with(['prestacion.disponibilidad'])->get();
 
         return response()->json($sedes);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
     }
 
     /**
@@ -38,28 +28,6 @@ class SedeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Sede  $sede
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Sede $sede)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Sede  $sede
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Sede $sede)
     {
         //
     }
