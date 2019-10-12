@@ -23,6 +23,10 @@ Route::group(['prefix' => 'v1'], function () {
             Route::post('/me', 'AuthApi\AuthController@me');
         });
 
+        Route::prefix('module')->group(function () {
+            Route::get('/', 'ModuleController@index');
+        });
+
         Route::prefix('sede')->group(function () {
             Route::get('/', 'SedeController@index');
         });
